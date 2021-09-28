@@ -15,4 +15,7 @@ def multiplicative_inverse(e,r):
     for i in range(r):
         if (e*i)%r == 1:
             return i
-
+def encrypt(pk, plaintext):
+    key, n = pk
+    encrypted = [(ord(char) ** key) % n for char in plaintext]
+    return encrypted
